@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+:root{
+    --backgColor:hsl(34, 88%, 97%);
+    --btnColors:hsla(33, 83%, 67%, 1);
+    --brand:#F79926;
+}
+html{
+    box-sizing: border-box;
+}
+*,*::after,*::before{
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: var(--backgColor);
+    font-family: 'Noto Sans', sans-serif;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+    position: relative;
+}
+header{
+    margin-top: 1.5rem;
+}
+.logo{
+    color: var(--brand);
+    font-weight: 700;
+    font-size: 1.8rem;
+    letter-spacing: 3px;
+    text-decoration: none;
+    border: 2px solid var(--brand);
+    padding: .3rem .7rem;
+    border-radius: 35px;
+    
+}
+.btn{
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    background-color: var(--btnColors);
+    color: var(--backgColor);
+}
+.wrapper{
+    margin: auto 0;
+}
+
+/*second page*/
+.grid{
+    display: grid;
+    grid-template-columns: repeat(4,minmax(180px, 1fr));
+    grid-gap: 15px;
+    max-width: 800px;
+    margin-top: 2rem;
+}
+.card{
+    background-color: transparent;
+    border-radius: 133px;
+    /* box-shadow:  25px 25px 50px #cbc6c0,
+                -25px -25px 50px #ffffff; */
+    height: 180px;
+    width: 180px;
+    position: relative;
+}
+
+
+.scoreboard{
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    position: absolute;
+    left: 0;
+    top: 20%;
+    border-bottom-right-radius: 25px;
+    border-top-right-radius: 25px;
+    background-color: var(--btnColors);
+}
+.player-score{
+    writing-mode: vertical-rl;
+    color: #fff;
+    padding: 1rem;
+    font-weight: 700;
+}
+.middle{
+    position: absolute;
+    top:0;
+    left:0;
+    margin: auto;
+    overflow:hidden;
+}
+.front, .back{
+    width:100%;
+    height: 100%;
+    overflow:hidden;
+    position:absolute;
+    backface-visibility: hidden;
+    transition: transform .5s linear;
+    border-radius: 133px;
+    background: #f8ecdc;
+  }
+.front{
+    background: #f8ecdc;
+    box-shadow:  25px 25px 50px #cbc6c0,
+          -25px -25px 50px #ffffff;
+}
+.back{
+    background-image: url('https://source.unsplash.com/random/180x180');
+    transform:rotateY(180deg);
+    z-index: 99;
+}
+.card:hover > .back{
+    transform: perspective(600px) rotateY(0deg);
+    
+}
+.card:hover > .front{
+    transform: perspective(600px) rotateY(-180deg);
+    box-shadow: none;
+    
+}
