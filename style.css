@@ -110,16 +110,45 @@ header{
           -25px -25px 50px #ffffff;
 }
 .back{
-    background-image: url('https://source.unsplash.com/random/180x180');
+    /* background-image: url('https://source.unsplash.com/random/180x180'); */
     transform:rotateY(180deg);
     z-index: 99;
 }
 .card:hover > .back{
-    transform: perspective(600px) rotateY(0deg);
+    transform: perspective(300px) rotateY(0deg);
     
 }
 .card:hover > .front{
-    transform: perspective(600px) rotateY(-180deg);
+    transform: perspective(300px) rotateY(-180deg);
     box-shadow: none;
     
 }
+.back-content{
+    width: 100%;
+    height: 100%;
+    color: var(--brand);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.7rem;
+}
+
+/* esta es la forma para daptarlo a click
+.backk{
+    transform: perspective(300px) rotateY(0deg);
+    
+}
+.frontt{
+    transform: perspective(300px) rotateY(-180deg);
+    box-shadow: none;
+    
+}
+.back-content{
+    width: 100%;
+    height: 100%;
+    color: var(--brand);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.7rem;
+} */
